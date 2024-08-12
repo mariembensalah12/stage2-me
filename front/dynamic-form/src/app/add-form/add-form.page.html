@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-title>{{ isEditing ? 'Éditer le formulaire' : 'Ajouter un formulaire' }}</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" fill="clear">
+        <ion-icon name="close-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="formNameForm" (ngSubmit)="onSubmit()">
+    <ion-card>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label position="stacked">Nom du formulaire</ion-label>
+          <ion-input formControlName="name" placeholder="Entrez le nom ici" class="custom-input"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-button expand="block" type="submit" color="secondary" class="ion-margin-top" [disabled]="!formNameForm.valid">
+      <ion-icon name="add-outline" slot="start"></ion-icon>
+      {{ isEditing ? 'Mettre à jour' : 'Ajouter' }}
+    </ion-button>
+  </form>
+</ion-content>

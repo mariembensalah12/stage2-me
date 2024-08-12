@@ -1,0 +1,41 @@
+ion-header {
+  ion-toolbar {
+    ion-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    ion-buttons {
+      display: flex;
+      align-items: center;
+
+      .custom-nav-button {
+        margin-right: auto; /* Utilisez 'auto' pour pousser le bouton vers la gauche */
+      }
+    }
+  }
+}
+
+ion-card {
+  ion-card-header {
+    ion-card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    ion-button {
+      --border-radius: 8px;
+      --padding-start: 12px;
+      --padding-end: 12px;
+      --inner-padding: 10px;
+    }
+  }
+}
+.custom-nav-button {
+  margin-right: 1050px; /* Ajustez cette valeur pour déplacer le bouton vers la gauche */
+}
+

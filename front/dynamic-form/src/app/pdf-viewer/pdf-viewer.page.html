@@ -1,0 +1,13 @@
+<ion-card class="pdf-viewer-container">
+  <ion-card-header>
+    <ion-card-title>Propositions de CV générées</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let url of pdfUrls; let i = index" button (click)="openPdf(url)">
+        <ion-icon name="document-text-outline" slot="start"></ion-icon>
+        <ion-label>CV {{ i + 1 }} - {{ url.split('/').pop() }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

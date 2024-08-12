@@ -1,0 +1,8 @@
+{
+  "name": "dynamic-form",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Mes formulaires</ion-title>
+    <ion-buttons slot="end"  class="custom-nav-button">
+      <ion-button routerLink="/home">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+        Home
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="end">
+      
+      <ion-button color="light" (click)="openAddFormModal()">
+        <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+        Ajouter
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-sm="6" size-md="4" size-lg="3" *ngFor="let form of formFields">
+        <ion-card (click)="onCardClick(form)">
+          <ion-card-header>
+            <ion-card-title>{{form.nom}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button expand="block" fill="outline" (click)="edit($event, form)">
+              <ion-icon name="create-outline" slot="start"></ion-icon>
+              Éditer
+            </ion-button>
+            <ion-button expand="block" fill="outline" color="danger" (click)="delete($event, form.id)">
+              <ion-icon name="trash-outline" slot="start"></ion-icon>
+              Supprimer
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

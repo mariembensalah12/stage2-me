@@ -1,0 +1,39 @@
+<ion-content class="ion-padding">
+  <div class="welcome-container">
+    <h1 class="welcome-title">Bienvenue</h1>
+  </div>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="5" class="ion-margin-bottom">
+        <ion-card class="custom-card">
+          <ion-card-header>
+            <ion-icon name="person-circle-outline" class="card-icon"></ion-icon>
+            <ion-card-title>Admin</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button expand="block" [routerLink]="['/admin']" class="custom-button">
+              Accéder
+              <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="5" class="ion-margin-bottom">
+        <ion-card class="custom-card">
+          <ion-card-header>
+            <ion-icon name="people-outline" class="card-icon"></ion-icon>
+            <ion-card-title>User</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button expand="block" [routerLink]="['/userforms']" class="custom-button">
+              Accéder
+              <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

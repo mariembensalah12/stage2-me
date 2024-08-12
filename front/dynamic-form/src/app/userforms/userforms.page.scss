@@ -1,0 +1,29 @@
+.custom-card {
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  }
+  
+  .card-icon {
+    font-size: 48px;
+    color: var(--ion-color-medium);
+    display: block;
+    margin: 10px auto;
+  }
+  
+  ion-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--ion-color-dark);
+  }
+  
+  ion-content {
+    --background: #f4f5f8;
+  }
+  .custom-nav-button {
+    margin-right: 1200px; /* Ajustez cette valeur selon vos besoins */
+  }
+  

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Tableau Interactif</ion-title>
+    <ion-buttons slot="end"  class="custom-nav-button">
+      <ion-button routerLink="/home">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+        Home
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="myForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col><strong>Label</strong></ion-col>
+        <ion-col><strong>Type</strong></ion-col>
+        <ion-col><strong>Required</strong></ion-col>
+        <ion-col><strong>Actions</strong></ion-col>
+      </ion-row>
+      <div formArrayName="tableRows">
+        <ion-row *ngFor="let row of tableRows.controls; let i = index" [formGroupName]="i">
+          <ion-col>
+            <ion-input formControlName="label" placeholder="Label"></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-select formControlName="type" placeholder="Type">
+              <ion-select-option value="text">Text</ion-select-option>
+              <ion-select-option value="number">Number</ion-select-option>
+              <ion-select-option value="date">Date</ion-select-option>
+              <ion-select-option value="email">Email</ion-select-option>
+              <ion-select-option value="file">Fichier</ion-select-option>
+              <ion-select-option value="tel">Tel</ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col>
+            <ion-select formControlName="required" placeholder="Required">
+              <ion-select-option [value]="'true'">True</ion-select-option>
+              <ion-select-option [value]="'false'">False</ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col>
+            <ion-button fill="clear" color="danger"  (click)="removeRow(i)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+            <ion-button fill="clear" color="success" (click)="onSubmit(i)" >
+              <ion-icon name="checkmark-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
+    
+    <ion-button expand="block" (click)="addRow()" class="ion-margin-top">
+      <ion-icon name="add-outline" slot="start"></ion-icon>
+      Ajouter un champ
+    </ion-button>
+  </form>
+</ion-content>
